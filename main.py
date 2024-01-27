@@ -63,6 +63,10 @@ def download(update: Update, context: CallbackContext) -> None:
     update.message.reply_text(response_message)
 
 def quality(update: Update, context: CallbackContext) -> None:
+    if len(context.args) < 2:
+        update.message.reply_text('Invalid usage. Please provide both quality option and song ID.')
+        return
+
     quality_option = context.args[0].lower()
     if quality_option in ('128kbps', '320kbps'):
         song_id = context.args[1]
