@@ -1,0 +1,5 @@
+services:
+  - name: flask-app
+    image: 
+    http:
+      port: 8080
